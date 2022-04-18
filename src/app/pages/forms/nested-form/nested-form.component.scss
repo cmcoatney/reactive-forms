@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.phone {
+  display: flex;
+  flex: 1;
+  & mat-form-field {
+    width: 50px;
+  }
+}

@@ -1,0 +1,26 @@
+<div>
+  <form [formGroup]="myForm">
+    Value: {{ myForm.value | json }}
+    <br />
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" formControlName="email" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <textarea
+        matInput
+        placeholder="your message..."
+        formControlName="message"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Career</mat-label>
+      <mat-select placeholder="career" formControlName="career"
+        ><mat-option *ngFor="let career of careers" [value]="career.value">
+          {{ career.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
