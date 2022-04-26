@@ -9,17 +9,17 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './step-three.component.html',
   styleUrls: ['./step-three.component.scss'],
 })
-export class StepThreeComponent  {
+export class StepThreeComponent {
   @Input() formGroup: FormGroup = new FormGroup({});
-
-  form = this.fb.group({
-    answers: this.fb.array([]),
-  });
 
   constructor(private readonly fb: FormBuilder) {}
 
+  ngOnInit(): void {
+    this.formGroup.addControl('answers', this.fb.array([]));
+  }
+
   get answers() {
-    return this.form.controls['answers'] as FormArray;
+    return this.formGroup.controls['answers'] as FormArray;
   }
 
   addAnswer() {
@@ -31,7 +31,7 @@ export class StepThreeComponent  {
     this.answers.push(answerForm);
   }
 
-  delete(idx: number){
+  delete(idx: number) {
     this.answers.removeAt(idx);
   }
 }
