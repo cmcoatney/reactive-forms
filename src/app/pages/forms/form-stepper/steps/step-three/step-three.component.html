@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+  <ng-template matStepLabel>Add Answers</ng-template>
+  {{ answers.value | json }}
+  <ng-container formArrayName="answers">
+    <ng-container *ngFor="let answerForm of answers.controls; let index = index">
+      <div class="container" [formGroupName]="index">
+        <mat-checkbox formControlName="correct"></mat-checkbox>
+        <mat-form-field appearance="fill">
+          <mat-label>Answer</mat-label>
+          <input matInput formControlName="answer" placeholder="Write anwer here" required />
+        </mat-form-field>
+        <button
+          mat-fab
+          color="primary"
+          aria-label="Example icon button with a delete icon"
+          (click)="delete(index)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+  </ng-container>
+  <div>
+    <button mat-button (click)="addAnswer()">Add Answer</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+</form>
+
+

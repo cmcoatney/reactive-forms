@@ -18,9 +18,11 @@ import { FormArrayComponent } from './pages/forms/form-array/form-array.componen
 import { FormStepperComponent } from './pages/forms/form-stepper/form-stepper.component';
 import { StepOneComponent } from './pages/forms/form-stepper/steps/step-one/step-one.component';
 import { StepTwoComponent } from './pages/forms/form-stepper/steps/step-two/step-two.component';
+import { StepThreeComponent } from './pages/forms/form-stepper/steps/step-three/step-three.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [AppComponent, SimpleFormComponent, HomeComponent, NestedFormComponent, FormArrayComponent, FormStepperComponent, StepOneComponent, StepTwoComponent],
+  declarations: [AppComponent, SimpleFormComponent, HomeComponent, NestedFormComponent, FormArrayComponent, FormStepperComponent, StepOneComponent, StepTwoComponent, StepThreeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +33,7 @@ import { StepTwoComponent } from './pages/forms/form-stepper/steps/step-two/step
     MatSelectModule,
     MatCheckboxModule,
     MatStepperModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,11 +2,14 @@
   {{ !isLinear ? "Enable linear mode" : "Disable linear mode" }}
 </button>
 <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <app-step-one [formGroup]="firstFormGroup"></app-step-one>
+  <mat-step [stepControl]="step1.formGroup">
+    <app-step-one #step1 [formGroup]="firstFormGroup"></app-step-one>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <app-step-two></app-step-two>
+  <mat-step [stepControl]="step2.formGroup">
+    <app-step-two #step2 [formGroup]="secondFormGroup"></app-step-two>
+  </mat-step>
+  <mat-step [stepControl]="step3.formGroup">
+    <app-step-three #step3 [formGroup]="thirdFormGroup"></app-step-three>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
@@ -14,6 +17,7 @@
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="stepper.reset()">Reset</button>
+      <button mat-button (click)="submit([firstFormGroup, secondFormGroup, thirdFormGroup])">Submit</button>
     </div>
   </mat-step>
 </mat-stepper>
