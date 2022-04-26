@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-// Form array binding issues resolved with this gotcha
-// https://dontpaniclabs.com/blog/post/2022/01/05/how-to-use-angular-formarrays-within-formgroups-in-reactive-forms/
-
 @Component({
   selector: 'app-step-three',
   templateUrl: './step-three.component.html',
